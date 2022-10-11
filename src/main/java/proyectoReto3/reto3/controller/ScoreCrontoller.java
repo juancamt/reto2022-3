@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.ScoreServise;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Score")
+@RequestMapping("/api/Score")
 public class ScoreCrontoller {
     @Autowired
     private ScoreServise scoreServise;

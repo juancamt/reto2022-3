@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.ReservationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Reservation")
+@RequestMapping("/api/Reservation")
 
 public class ReservationController {
     @Autowired

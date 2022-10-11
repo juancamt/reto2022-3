@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.ClientService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Client")
+@RequestMapping("/api/Client")
 
 public class ClientController {
     @Autowired

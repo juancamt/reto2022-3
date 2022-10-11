@@ -10,7 +10,7 @@ import proyectoReto3.reto3.service.MessageService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Message")
+@RequestMapping("/api/Message")
 
 public class MessageController {
     @Autowired

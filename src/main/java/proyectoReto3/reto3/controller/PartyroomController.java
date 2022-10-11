@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.PartyroomService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Partyroom")
+@RequestMapping("/api/Partyroom")
 
 public class PartyroomController {
     @Autowired

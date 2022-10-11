@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.AdminService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Admin")
+@RequestMapping("/api/Admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;

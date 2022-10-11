@@ -9,7 +9,7 @@ import proyectoReto3.reto3.service.CategoryService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Category")
+@RequestMapping("/api/Category")
 
 public class CategoryController {
     @Autowired
