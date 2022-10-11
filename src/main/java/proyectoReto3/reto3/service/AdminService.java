@@ -21,7 +21,7 @@ public class AdminService {
             return adminRepository.save(a);
         }else{
             Optional<Admin> d = adminRepository.getAdmin(a.getIdAdmin());
-            if (d.isEmpty()){
+            if (d.isPresent()){
                 return a;
             }else {
                 return adminRepository.save(a);

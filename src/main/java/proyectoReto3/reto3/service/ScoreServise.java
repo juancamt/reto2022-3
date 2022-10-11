@@ -24,7 +24,7 @@ public class ScoreServise {
             return scoreRepository.save(s);
         }else{
             Optional<Score> c = scoreRepository.getScore(s.getIdScore());
-            if (c.isEmpty()){
+            if (c.isPresent()){
                 return s;
             }else {
                 return scoreRepository.save(s);

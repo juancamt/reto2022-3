@@ -27,7 +27,7 @@ public class PartyroomService {
             return partyroomRepository.save(p);
         }else {
             Optional<Partyroom> e =partyroomRepository.getPartyroom(p.getId());
-            if(e.isEmpty()){
+            if(e.isPresent()){
                 return p;
             }else{
                 return partyroomRepository.save(p);

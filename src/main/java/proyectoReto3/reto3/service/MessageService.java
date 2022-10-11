@@ -27,7 +27,7 @@ public class MessageService {
             return messageRepository.save(c);
         }else {
             Optional<Message> e = messageRepository.getMessage(c.getIdMessage());
-            if(e.isEmpty()){
+            if(e.isPresent()){
                 return c;
             }else{
                 return messageRepository.save(c);
