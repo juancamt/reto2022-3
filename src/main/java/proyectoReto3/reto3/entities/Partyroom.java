@@ -12,8 +12,8 @@ public class Partyroom implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String owner;
     private String name;
+    private String owner;
     private Integer capacity;
     private String description;
 
@@ -38,20 +38,20 @@ public class Partyroom implements Serializable {
         this.id = id;
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public Integer getCapacity() {

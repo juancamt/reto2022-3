@@ -18,14 +18,15 @@ public class Reservation implements Serializable {
     private String status="created";
 
     @ManyToOne
+    @JoinColumn(name = "partyroomId")
+    @JsonIgnoreProperties("reservations")
+    private Partyroom partyroom;
+    @ManyToOne
     @JoinColumn (name = "clientId")
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    @ManyToOne
-    @JoinColumn(name = "partyroomId")
-    @JsonIgnoreProperties("reservations")
-    private Partyroom partyroom;
+
 
     @OneToOne(cascade = {CascadeType.REMOVE},mappedBy = "reservation")
     @JsonIgnoreProperties("reservation")
@@ -63,20 +64,20 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
     public Partyroom getPartyroom() {
         return partyroom;
     }
 
     public void setPartyroom(Partyroom partyroom) {
         this.partyroom = partyroom;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public Score getScore() {
