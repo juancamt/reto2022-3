@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Category")
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST})
 
 public class CategoryController {
     @Autowired

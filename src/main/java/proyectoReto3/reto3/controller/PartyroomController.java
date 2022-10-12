@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Partyroom")
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST})
 
 public class PartyroomController {
     @Autowired

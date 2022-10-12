@@ -1,5 +1,6 @@
 package proyectoReto3.reto3.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proyectoReto3.reto3.entities.Admin;
 import proyectoReto3.reto3.repository.AdminRepository;
@@ -9,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class AdminService {
+    @Autowired
     private AdminRepository adminRepository;
     public List<Admin>getAll(){
         return adminRepository.getAll();

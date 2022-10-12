@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+<center>
+
+    <h1>Creacion de categoria</h1>
+    <h1>
+        <div>
+            <input type="text" id="nameCategory" placeholder="NAME"><br>
+            <input type="text" id="descriptionCategory" placeholder="DESCRIPTION"><br>
+        </div>
+    </h1>
+    <button onclick='traerCategory()'>CONSULTAR</button>
+    <button onclick='guardarCategory()'>GUARDAR</button>
+
+
+    <div id='listaCategory'></div>
+
+
+    <h1>Creacion de salones</h1>
+    <h1>
+        <div>
+
+            <input type="text" id="ownerSalon" placeholder="OWNER"><br>
+            <input type="text" id="nameSalon" placeholder="NAME"><br>
+            <input type="number" id="capacitySalon" placeholder="CAPACITY"><br>
+            <input type="text" id="descriptionSalon" placeholder="DESCRIPTION"><br>
+
+
+        </div>
+    </h1>
+
+    <div id="listaSalones"></div>
+
+    <button onclick='traerSala()'>CONSULTAR</button>
+    <button onclick='guardarSala()'>GUARDAR</button>
+
+    <h1>Registro de clientes</h1>
+    <h1>
+        <div>
+
+            <input type="text" id="nameCliente" placeholder="NAME"><br>
+            <input type="text" id="emailCliente" placeholder="EMAIL"><br>
+            <input type="number" id="ageCliente" placeholder="AGE"><br>
+
+        </div>
+    </h1>
+
+    <div id="listaClientes"></div>
+
+    <button onclick='traerCliente()'>CONSULTAR</button>
+    <button onclick='guardarCliente()'>GUARDAR</button>
+
+    <h1>Registro de mensages</h1>
+    <h1>
+        <div>
+            <input type="text" id="messageText" placeholder="messageText"><br>
+        </div>
+    </h1>
+
+    <div id="listaMessage"></div>
+
+    <button onclick='traerMessas()'>CONSULTAR</button>
+    <button onclick='guardarMessas()'>GUARDAR</button>
+
+    <h1>Registro de reservas</h1>
+    <h1>
+        <div>
+            <input type="date" id="startDate" placeholder="startDate"><br>
+            <input type="date" id="devolutionDate" placeholder="devolutionDate"><br>
+        </div>
+    </h1>
+
+    <div id="listaReserva"></div>
+
+    <button onclick='traerReserva()'>CONSULTAR</button>
+    <button onclick='guardarReserva()'>GUARDAR</button>
+
+    <h1>Registro de administrador</h1>
+    <h1>
+        <div>
+
+            <input type="text" id="nameAdmin" placeholder="NAME"><br>
+            <input type="text" id="emailAdmin" placeholder="EMAIL"><br>
+            <input type="text" id="passwordAdmin" placeholder="PASSWORD"><br>
+
+        </div>
+    </h1>
+
+    <div id="admin"></div>
+
+    <button onclick='traerAdmin()'>CONSULTAR</button>
+    <button onclick='guardarAdmin()'>GUARDAR</button>
+    
+</center>
+</body>
+</html>
