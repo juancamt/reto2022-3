@@ -3,8 +3,14 @@ package proyectoReto3.reto3.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import proyectoReto3.reto3.entities.Reservation;
+import proyectoReto3.reto3.entities.dtos.CompleteAndCancelled;
+import proyectoReto3.reto3.entities.dtos.TotalAndClient;
 import proyectoReto3.reto3.repository.ReservationRepository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,5 +68,35 @@ public class ReservationService {
             return  true;
         }).orElse(false);
         return d;
+    }
+
+    public  List<Reservation> getReservationBetweenDatesReport(String fechaA,String fechaB){
+        SimpleDateFormat parser = new SimpleDateFormat("yyyy-MM-dd");
+        Date a = new Date();
+        Date b = new Date();
+        try {
+            a = parser.parse(fechaA);
+            b = parser.parse(fechaB);
+        }catch (ParseException exception){
+            exception.printStackTrace();
+        }
+        if (a.before(b)){
+            return reservationRepository.getReservationsBetweenDates(a,b);
+        }else{
+            return new ArrayList<>();
+        }
+    }
+    public CompleteAndCancelled getReservationStatusReport(){
+        List<Reservation> completed = reservationRepository.getReservationsByStatus("completed");
+        List<Reservation> cancelled = reservationRepository.getReservationsByStatus("cancelled");
+
+        int cantidadCompletadas = completed.size();
+        int cantidadCanceladas = cancelled.size();
+
+        return new CompleteAndCancelled( (long) cantidadCompletadas, (long) cantidadCanceladas);
+    }
+
+    public List<TotalAndClient>getTopClientsReport(){
+        return reservationRepository.getTopClients();
     }
 }
