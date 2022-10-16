@@ -22,16 +22,38 @@ public class CategoryService {
         return categoryRepository.getCategory(id);
     }
 
-    public Category save(Category e){
-        if(e.getId()==null){
-            return categoryRepository.save(e);
+    public Category save(Category category){
+        if(category.getId()==null){
+            return categoryRepository.save(category);
         }else {
-            Optional<Category> c = categoryRepository.getCategory(e.getId());
+            Optional<Category> c = categoryRepository.getCategory(category.getId());
             if(c.isPresent()){
-                return e;
+                return category;
             }else{
-                return categoryRepository.save(e);
+                return categoryRepository.save(category);
             }
         }
+    }
+    public Category update(Category category){
+        if (category.getId()!=null){
+            Optional<Category> a = categoryRepository.getCategory(category.getId());
+            if(a.isPresent()){
+                if (category.getDescription()!=null){
+                    a.get().setDescription(category.getDescription());
+                }
+                if (category.getName()!=null){
+                    a.get().setName(category.getName());
+                }
+                return categoryRepository.save(a.get());
+            }
+        }
+        return category;
+    }
+    public boolean deleteCategory(int id){
+        boolean d = getCategory(id).map(category -> {
+            categoryRepository.delete(category);
+            return  true;
+        }).orElse(false);
+        return d;
     }
 }

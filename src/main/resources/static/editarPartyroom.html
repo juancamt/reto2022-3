@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDITAR PARTYROOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+<center>
+
+    <h1>Edicion de partyroom</h1>
+    <h1>
+        <div>
+            <input type="number" id="idPartyroom" placeholder="ID"><br>
+            <input type="text" id="ownerSalon" placeholder="OWNER"><br>
+            <input type="text" id="nameSalon" placeholder="NAME"><br>
+            <input type="number" id="capacitySalon" placeholder="CAPACITY"><br>
+            <input type="text" id="descriptionSalon" placeholder="DESCRIPTION"><br>
+
+
+        </div>
+    </h1>
+
+    <div id="listaSalones"></div>
+
+    <button onclick='traerPartyroomGet()'>CONSULTAR</button>
+    <button onclick='actuaPartyroom()'>ACTUALIZAR</button>
+
+
+</center>
+</body>
+</html>

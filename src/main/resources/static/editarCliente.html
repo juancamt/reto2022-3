@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDITAR CLIENT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+<center>
+
+    <h1>Edicion de clientes</h1>
+    <h1>
+        <div>
+            <input type="number" id="idClient" placeholder="ID"><br>
+            <input type="text" id="nameCliente" placeholder="NAME"><br>
+            <input type="number" id="ageCliente" placeholder="AGE"><br>
+
+        </div>
+    </h1>
+
+    <div id="listaClientes"></div>
+
+    <button onclick='traerClienteGet()'>CONSULTAR</button>
+    <button onclick='actuaCliente()'>ACTUALIZAR</button>
+
+</center>
+</body>
+</html>

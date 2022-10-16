@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDITAR RESERVAS </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+<center>
+
+  <h1>Edicion de reservas</h1>
+  <h1>
+    <div>
+      <input type="number" id="idReservation" placeholder="ID"><br>
+      <input type="date" id="startDate" placeholder="startDate"><br>
+      <input type="date" id="devolutionDate" placeholder="devolutionDate"><br>
+    </div>
+  </h1>
+
+
+  <div id="listaReserva"></div>
+
+  <button onclick='traerReservaGet()'>CONSULTAR</button>
+  <button onclick='actuaReservation()'>ACTUALIZAR</button>
+
+</center>
+</body>
+</html>

@@ -7,10 +7,11 @@ import proyectoReto3.reto3.entities.Score;
 import proyectoReto3.reto3.service.ScoreServise;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Score")
-@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 
 public class ScoreCrontoller {
     @Autowired
@@ -19,9 +20,23 @@ public class ScoreCrontoller {
     public List<Score> getAll(){
         return scoreServise.getAll();
     }
+    @GetMapping("/{id}")
+    public Optional<Score> getScore(@PathVariable("id") int idScore){
+        return scoreServise.getScore(idScore);
+    }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Score save(@RequestBody Score s){
         return scoreServise.save(s);
+    }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Score update(@RequestBody Score score){
+        return scoreServise.update(score);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus (HttpStatus.NO_CONTENT)
+    public boolean delete (@PathVariable("id") int id){
+        return scoreServise.deleteScore(id);
     }
 }
